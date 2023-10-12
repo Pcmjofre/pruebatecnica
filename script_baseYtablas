@@ -1,0 +1,53 @@
+-- Database: DBUsuarios
+
+-- DROP DATABASE "DBUsuarios";
+
+CREATE DATABASE "DBUsuarios"
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Spanish_Chile.1252'
+    LC_CTYPE = 'Spanish_Chile.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+
+
+
+-- Table: public.usuarios
+
+-- DROP TABLE public.usuarios;
+
+CREATE TABLE public.usuarios
+(
+    name character(100) COLLATE pg_catalog."default",
+    email character(100) COLLATE pg_catalog."default" NOT NULL,
+    password character(100) COLLATE pg_catalog."default",
+    CONSTRAINT usuarios_pkey PRIMARY KEY (email)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.usuarios
+    OWNER to postgres;
+	
+-- Table: public.telefonos
+
+-- DROP TABLE public.telefonos;
+
+CREATE TABLE public.telefonos
+(
+    numero integer,
+    citycode integer,
+    countrycode integer,
+    correo character(100) COLLATE pg_catalog."default"
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.telefonos
+    OWNER to postgres;
